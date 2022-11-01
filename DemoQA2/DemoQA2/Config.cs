@@ -14,5 +14,7 @@ namespace DemoQA2
             Driver.driver = new ChromeDriver();
             Driver.driver.Navigate().GoToUrl(Driver.BaseUrl);
         }
+
+        public static string Name = "petar";
     }
 }
