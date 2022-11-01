@@ -81,6 +81,20 @@ namespace DemoQA2.Scenarios
             Assert.AreEqual("You selected Cancel", alertsPage.ConfirmResult.Text);
         }
 
+        [Test]
+        public void AlertSendText()
+        {
+            AlertsPage alertsPage = new AlertsPage();
+            alertsPage.PromptAlert.Click();
+
+            alert = Driver.driver.SwitchTo().Alert();
+            Assert.AreEqual("Please enter your name", alert.Text);
+
+            alert.SendKeys(Config.Name);
+            alert.Accept();
+            Assert.AreEqual("You entered " +Config.Name, alertsPage.PromptResult.Text);
+        }
+
         [OneTimeTearDown]
         public void CleanUp()
         {

@@ -30,5 +30,11 @@ namespace DemoQA2.Pages
 
         [FindsBy(How = How.Id, Using = "confirmResult")]
         public IWebElement ConfirmResult { get; set; }
+
+        [FindsBy(How = How.Id, Using = "promtButton")]
+        public IWebElement PromptAlert { get; set; }
+
+        [FindsBy(How = How.Id, Using = "promptResult")]
+        public IWebElement PromptResult { get; set; }
     }
 }
