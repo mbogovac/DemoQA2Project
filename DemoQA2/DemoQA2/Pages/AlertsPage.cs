@@ -21,5 +21,14 @@ namespace DemoQA2.Pages
 
         [FindsBy(How = How.Id, Using = "alertButton")]
         public IWebElement FirstAlertButton { get; set; }
+
+        [FindsBy(How = How.Id, Using = "timerAlertButton")]
+        public IWebElement TimerAlertButton { get; set; }
+
+        [FindsBy(How = How.Id, Using = "confirmButton")]
+        public IWebElement ConfirmAlertButton { get; set; }
+
+        [FindsBy(How = How.Id, Using = "confirmResult")]
+        public IWebElement ConfirmResult { get; set; }
     }
 }
