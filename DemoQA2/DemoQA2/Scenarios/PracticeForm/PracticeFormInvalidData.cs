@@ -1,8 +1,10 @@
 ﻿using DemoQA2.Pages;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -27,16 +29,22 @@ namespace DemoQA2.Scenarios.PracticeForm
         }
 
         [Test]
-        public void InvalidData()
+        public void EmptyData()
         {
             FormsPage formsPage = new FormsPage();
 
             formsPage.FirstName.SendKeys(Config.InvalidData.Empty);
             formsPage.LastName.SendKeys(Config.InvalidData.Empty);
-            formsPage.UserEmail.SendKeys(Config.InvalidData.Empty);
+            formsPage.UserEmail.SendKeys(Config.InvalidData.Blank);
             formsPage.MobileNumber.SendKeys(Config.InvalidData.Empty);
 
-            Assert.AreEqual("rgb(206, 212, 218)", formsPage.FirstName.GetCssValue("border-color"));
+            formsPage.MobileNumber.SendKeys(Keys.Enter);
+            Thread.Sleep(2000);
+
+            Assert.AreEqual("rgb(220, 53, 69)", formsPage.FirstName.GetCssValue("border-color"));
+            Assert.AreEqual("rgb(220, 53, 69)", formsPage.LastName.GetCssValue("border-color"));
+            Assert.AreEqual("rgb(220, 53, 69)", formsPage.UserEmail.GetCssValue("border-color"));
+            Assert.AreEqual("rgb(220, 53, 69)", formsPage.MobileNumber.GetCssValue("border-color"));
         }
 
         [Test]
@@ -44,10 +52,7 @@ namespace DemoQA2.Scenarios.PracticeForm
         {
             FormsPage formsPage = new FormsPage();
             formsPage.MobileNumber.SendKeys(Config.InvalidData.Mobile);
-            Thread.Sleep(3000);
-           
             Assert.AreEqual(10, formsPage.MobileNumber.Text.Length);
-            Thread.Sleep(3000);
         }
 
         [TearDown]

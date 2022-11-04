@@ -37,8 +37,6 @@ namespace DemoQA2.Scenarios.PracticeForm
             formsPage.LastName.SendKeys(Config.ValidData.LastName);
             formsPage.UserEmail.SendKeys(Config.ValidData.Email);
 
-            WebDriverWait wait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(5));
-
             Actions actions = new Actions(Driver.driver);
             actions.MoveToElement(formsPage.RadioBtnOther).Click().Perform();
 
@@ -60,6 +58,7 @@ namespace DemoQA2.Scenarios.PracticeForm
 
             formsPage.SubjectInput.SendKeys(Keys.Enter);
 
+            WebDriverWait wait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(5));
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(formsPage.MusicCheckbox));
 
             formsPage.MusicCheckbox.Click();
