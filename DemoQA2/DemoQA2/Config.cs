@@ -39,6 +39,7 @@ namespace DemoQA2
             public static string Email = "m @gmail.com";
             public static string Mobile = "1110002222333";
             public static string Empty = "";
+            public static string Blank = " ";
         }
 
         public static class Messages
