@@ -13,11 +13,19 @@ namespace DemoQA2
         public static void FromHomePageToAlertsPage()
         {
             HomePage homePage = new HomePage();
-            AlertsPage alertsPage = new AlertsPage();
-
             homePage.AlertOption.Click();
-            Thread.Sleep(2000);
+        }
 
+        public static void FromHomePageToElementsPage()
+        {
+            HomePage homePage = new HomePage();
+            homePage.ElementsOption.Click();
+        }
+
+        public static void FromHomePageToFormsPage()
+        {
+            HomePage homePage = new HomePage();
+            homePage.FormsOption.Click();
         }
     }
 }
