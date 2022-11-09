@@ -75,9 +75,12 @@
     <Compile Include="Pages\ElementsPage.cs" />
     <Compile Include="Pages\FormsPage.cs" />
     <Compile Include="Pages\HomePage.cs" />
+    <Compile Include="Pages\TextBoxPage.cs" />
+    <Compile Include="Pages\WidgetsPage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scenarios\HandlingAlerts.cs" />
+    <Compile Include="Scenarios\MainItemDropdown.cs" />
     <Compile Include="Scenarios\PracticeForm\PracticeFormData.cs" />
     <Compile Include="Scenarios\PracticeForm\PracticeFormInvalidData.cs" />
     <Compile Include="Scenarios\TextBoxData.cs" />

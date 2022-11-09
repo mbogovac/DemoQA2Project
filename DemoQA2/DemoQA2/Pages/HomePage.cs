@@ -23,5 +23,8 @@ namespace DemoQA2.Pages
 
         [FindsBy(How = How.XPath, Using = "//*[@id=\"app\"]/div/div/div[2]/div/div[2]/div/div[1]")]
         public IWebElement FormsOption { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//*[@id=\"app\"]/div/div/div[2]/div/div[4]/div/div[1]")]
+        public IWebElement WidgetOption { get; set; }
     }
 }
