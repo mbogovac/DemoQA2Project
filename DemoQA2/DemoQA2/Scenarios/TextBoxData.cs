@@ -25,43 +25,41 @@ namespace DemoQA2.Scenarios
         {
             Config.InitializeDriver();
             NavigateTo.FromHomePageToElementsPage();
-
-            ElementsPage elementsPage = new ElementsPage();
-            elementsPage.TextBox.Click();
+            NavigateTo.FromElementsPageToTextBoxPage();
         }
 
         [Test]
         public void EnterAllData()
         {
-            ElementsPage elementsPage = new ElementsPage();
+            TextBoxPage textBoxPage = new TextBoxPage();
 
-            elementsPage.Username.SendKeys(Config.ValidData.FullName);
-            elementsPage.Email.SendKeys(Config.ValidData.Email);
-            elementsPage.CurrentAddress.SendKeys(Config.ValidData.CurrentAddress);
-            elementsPage.PermanentAddress.SendKeys(Config.ValidData.PermanentAddress);
+            textBoxPage.Username.SendKeys(Config.ValidData.FullName);
+            textBoxPage.Email.SendKeys(Config.ValidData.Email);
+            textBoxPage.CurrentAddress.SendKeys(Config.ValidData.CurrentAddress);
+            textBoxPage.PermanentAddress.SendKeys(Config.ValidData.PermanentAddress);
 
             WebDriverWait wait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(5));
-            wait.Until(ExpectedConditions.ElementToBeClickable(elementsPage.SubmitButton));
+            wait.Until(ExpectedConditions.ElementToBeClickable(textBoxPage.SubmitButton));
 
-            elementsPage.SubmitButton.Click();
+            textBoxPage.SubmitButton.Click();
 
-            Assert.AreEqual("Name:"+Config.ValidData.FullName, elementsPage.NameResult.Text);
-            Assert.AreEqual("Email:"+Config.ValidData.Email, elementsPage.EmailResult.Text);
+            Assert.AreEqual("Name:"+Config.ValidData.FullName, textBoxPage.NameResult.Text);
+            Assert.AreEqual("Email:"+Config.ValidData.Email, textBoxPage.EmailResult.Text);
         }
 
         [Test]
         public void EnterInvalidEmail()
         {
-            ElementsPage elementsPage = new ElementsPage();
+            TextBoxPage textBoxPage = new TextBoxPage();
 
-            elementsPage.Username.Clear();
-            elementsPage.Email.Clear();
+            textBoxPage.Username.Clear();
+            textBoxPage.Email.Clear();
 
-            elementsPage.Username.SendKeys(Config.ValidData.FullName);
-            elementsPage.Email.SendKeys(Config.InvalidData.Email);
-            elementsPage.SubmitButton.Click();
+            textBoxPage.Username.SendKeys(Config.ValidData.FullName);
+            textBoxPage.Email.SendKeys(Config.InvalidData.Email);
+            textBoxPage.SubmitButton.Click();
 
-            Assert.AreEqual("mr-sm-2 field-error form-control", elementsPage.Email.GetAttribute("class"));
+            Assert.AreEqual("mr-sm-2 field-error form-control", textBoxPage.Email.GetAttribute("class"));
         }
 
 

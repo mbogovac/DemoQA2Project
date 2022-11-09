@@ -3,17 +3,13 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace DemoQA2.Scenarios.PracticeForm
 {
     public class PracticeFormInvalidData
     {
+
         public PracticeFormInvalidData()
         {
         }
@@ -39,8 +35,11 @@ namespace DemoQA2.Scenarios.PracticeForm
             formsPage.MobileNumber.SendKeys(Config.InvalidData.Empty);
 
             formsPage.MobileNumber.SendKeys(Keys.Enter);
-            Thread.Sleep(2000);
 
+            WebDriverWait wait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(5));
+
+            //IWebElement element = Config.WaitUntilAttributeValueEquals(formsPage.FirstName, "border-color", "");
+            Thread.Sleep(2000);
             Assert.AreEqual("rgb(220, 53, 69)", formsPage.FirstName.GetCssValue("border-color"));
             Assert.AreEqual("rgb(220, 53, 69)", formsPage.LastName.GetCssValue("border-color"));
             Assert.AreEqual("rgb(220, 53, 69)", formsPage.UserEmail.GetCssValue("border-color"));
@@ -48,11 +47,23 @@ namespace DemoQA2.Scenarios.PracticeForm
         }
 
         [Test]
-        public void InvalidMobile()
+        public void MobileMoreThan10()
         {
             FormsPage formsPage = new FormsPage();
-            formsPage.MobileNumber.SendKeys(Config.InvalidData.Mobile);
+            formsPage.MobileNumber.SendKeys(Config.InvalidData.MobileMoreThan10);
+            formsPage.MobileNumber.SendKeys(Keys.Enter);
+
             Assert.AreEqual(10, formsPage.MobileNumber.Text.Length);
+        }
+
+        [Test]
+        public void MobileLessThan10()
+        {
+            FormsPage formsPage = new FormsPage();
+            formsPage.MobileNumber.SendKeys(Config.InvalidData.MobileLessThan10);
+            formsPage.MobileNumber.SendKeys(Keys.Enter);
+            Thread.Sleep(2000);
+            Assert.AreEqual("rgb(220, 53, 69)", formsPage.MobileNumber.GetCssValue("border-color"));
         }
 
         [TearDown]
@@ -60,5 +71,9 @@ namespace DemoQA2.Scenarios.PracticeForm
         {
             Driver.driver.Quit();
         }
+
     }
+    
 }
+
+

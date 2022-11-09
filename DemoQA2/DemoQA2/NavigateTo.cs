@@ -27,5 +27,25 @@ namespace DemoQA2
             HomePage homePage = new HomePage();
             homePage.FormsOption.Click();
         }
+
+        public static void FromElementsPageToCheckBoxPage()
+        {
+            ElementsPage elementsPage = new ElementsPage();
+            elementsPage.CheckBoxes.Click();
+        }
+
+        public static void FromElementsPageToTextBoxPage()
+        {
+            ElementsPage elementsPage = new ElementsPage();
+            elementsPage.TextBox.Click();
+        }
+
+        public static void FromElementsPageToWidgetPage()
+        {
+            HomePage homePage = new HomePage();
+
+            homePage.WidgetOption.Click();
+        }
+
     }
 }

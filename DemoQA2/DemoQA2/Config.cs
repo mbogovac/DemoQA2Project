@@ -1,10 +1,7 @@
-﻿using OpenQA.Selenium.Chrome;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DemoQA2
 {
@@ -37,9 +34,10 @@ namespace DemoQA2
         public static class InvalidData
         {
             public static string Email = "m @gmail.com";
-            public static string Mobile = "1110002222333";
+            public static string MobileMoreThan10 = "1110002222333";
             public static string Empty = "";
             public static string Blank = " ";
+            public static string MobileLessThan10 = "111";
         }
 
         public static class Messages
@@ -47,5 +45,20 @@ namespace DemoQA2
             public static string ThankYouMessage = "Thanks for submitting the form";
         }
 
+
+        //public static void WaitUntilAttributeValueEquals(this IWebElement webElement, string attributeName, string attributeValue)
+        //{
+        //    WebDriverWait wait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(5));
+        //    wait.Until<IWebElement>((d) =>
+        //    {
+        //        if (webElement.GetAttribute(attributeName) == attributeValue)
+        //        {
+        //            return webElement;
+        //        }
+        //        else
+        //        {
+        //            return null;
+        //        }
+        //    });
+        }
     }
-}
