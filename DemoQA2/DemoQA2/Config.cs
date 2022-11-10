@@ -45,20 +45,5 @@ namespace DemoQA2
             public static string ThankYouMessage = "Thanks for submitting the form";
         }
 
-
-        //public static void WaitUntilAttributeValueEquals(this IWebElement webElement, string attributeName, string attributeValue)
-        //{
-        //    WebDriverWait wait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(5));
-        //    wait.Until<IWebElement>((d) =>
-        //    {
-        //        if (webElement.GetAttribute(attributeName) == attributeValue)
-        //        {
-        //            return webElement;
-        //        }
-        //        else
-        //        {
-        //            return null;
-        //        }
-        //    });
         }
     }

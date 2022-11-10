@@ -15,7 +15,7 @@ namespace DemoQA2.Scenarios
         public void Initialize()
         {
             Config.InitializeDriver();
-            NavigateTo.FromElementsPageToWidgetPage();
+            NavigateTo.FromHomePageToWidgetPage();
             
         }
 
