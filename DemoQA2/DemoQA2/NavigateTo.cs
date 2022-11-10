@@ -40,10 +40,9 @@ namespace DemoQA2
             elementsPage.TextBox.Click();
         }
 
-        public static void FromElementsPageToWidgetPage()
+        public static void FromHomePageToWidgetPage()
         {
             HomePage homePage = new HomePage();
-
             homePage.WidgetOption.Click();
         }
 

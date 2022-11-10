@@ -21,6 +21,8 @@ namespace DemoQA2.Pages
         [FindsBy(How = How.XPath, Using = "//span[text()='Menu']")]
         public IWebElement Menu { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//span[text()='Select Menu']")]
+        public IWebElement SelectMenu { get; set; }
 
         [FindsBy(How = How.LinkText, Using = "Main Item 2")]
         public IWebElement MainItem2 { get; set; }
