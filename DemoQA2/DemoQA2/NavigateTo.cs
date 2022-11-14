@@ -34,6 +34,12 @@ namespace DemoQA2
             elementsPage.CheckBoxes.Click();
         }
 
+        public static void FromElementsPageToButtonsPage()
+        {
+            ElementsPage elementsPage = new ElementsPage();
+            elementsPage.Buttons.Click();
+        }
+
         public static void FromElementsPageToTextBoxPage()
         {
             ElementsPage elementsPage = new ElementsPage();
