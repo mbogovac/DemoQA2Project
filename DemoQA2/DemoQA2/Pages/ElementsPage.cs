@@ -21,5 +21,8 @@ namespace DemoQA2.Pages
         [FindsBy(How = How.XPath, Using = "//*[@id=\"app\"]/div/div/div[2]/div[1]/div/div/div[1]/div/ul/li[2]")]
         public IWebElement CheckBoxes { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//*[@id=\"app\"]/div/div/div[2]/div[1]/div/div/div[1]/div/ul/li[5]")]
+        public IWebElement Buttons { get; set; }
+
     }
 }

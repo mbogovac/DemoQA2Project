@@ -43,6 +43,9 @@ namespace DemoQA2
         public static class Messages
         {
             public static string ThankYouMessage = "Thanks for submitting the form";
+            public static string DoubleClickMessage = "You have done a double click";
+            public static string RightClickMessage = "You have done a right click";
+            public static string DynamicClickMessage = "You have done a dynamic click";
         }
 
         }
